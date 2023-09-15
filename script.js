@@ -109,7 +109,7 @@ $("#talk").click(function (){
 //movement from values file		
 		// $.ajax({
 			// type: "GET",
-			// url: "./values.txt",
+			// url: "./values",
 			// success: function(valori) {
 				// var valoriarray = $.csv.toArray(valori);
 				// valoriarray.push('0');
