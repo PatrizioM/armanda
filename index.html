@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>ARMANDA - 3D Talking Agent</title>
+		<meta charset="utf-8">
+		<meta name="description" content="ARMANDA - 3D Talking Agent powered by WebGL, three.js, Web Speech API">
+		<meta name="author" content="three.js">
+		
+		<link href="./styles.css" type="text/css" rel="Stylesheet"/>
+		<link href="./jquery-ui.css" type="text/css" rel="Stylesheet"/>
+		
+	</head>
+	
+	<body>
+		<fieldset id="ctrlleft">
+		
+
+			
+			<div class="sliderControl">
+				<label for="blendJawRange">Jaw Range</label>
+				<div id="blendJawRange"></div>
+			</div>
+			
+			<div class="sliderControl">
+				<label for="blendSyncRange">Lips Sync</label>
+				<div id="blendSyncRange"></div>
+			</div>
+			
+			<div class="sliderControl">
+				<label for="blendTwistRange">Jaw Twist</label>
+				<div id="blendTwistRange"></div>
+			</div>
+	
+			<div class="sliderControl">
+				<label for="blendLipRange">Lips Curl</label>
+				<div id="blendLipRange"></div>
+			</div>
+			
+			<div class="sliderControl">
+				<label for="blendBlinkRange">Eyes</label>
+				<div id="blendBlinkRange"></div>
+			</div>
+			
+			<div class="sliderControl">
+				<label for="blendWidthRange">Mouth Width</label>
+				<div id="blendWidthRange"></div>
+			</div>
+
+			<div class="sliderControl">
+				<label for="blendExpressRange">Expression</label>
+				<div id="blendExpressRange"></div>
+			</div>			
+
+			<div class="sliderControl">
+				<label for="blendSymRange">Symmetry</label>
+				<div id="blendSymRange"></div>
+			</div>
+			
+			<div class="sliderControl">
+				<label for="blendTongueRange">Tongue</label>
+				<div id="blendTongueRange"></div>
+			</div>
+			
+			<div class="sliderControl">
+				<label for="blendMaleRange">Gender</label>
+				<div id="blendMaleRange"></div>
+			</div>
+<a href="#" id="reset-blend-targets" class="button">Reset Blend Targets</a>
+		</fieldset>
+		<fieldset id="ctrl">
+		
+		<p>ARMANDA - 3D Talking Agent v0.5</br>by Patrizio Migliarini <p>
+		<p>When the Talk button is pressed, the text in the texbox below (or, if no input given, a server-side file) is parsed and the model is animated, the text is also passed to the Text-to-Speech API for the audio to be rendered. The expression of this model can also be changed utilizing the sliders in the control panel. When loading, a test is done to verify if the browser is Text-to-Speech capable and the button label is changed accordingly.
+		<p>Rendered with WebGL using three.js</br>
+		Text-to-Speech through Web Speech API</br>
+		Speech-to-Text through Google API</br>
+		Model by David Steele</p>
+		<p>To move the camera use the arrow keys.</p>
+		
+		<p>
+
+					
+<script type="text/javascript">
+  function transcribe(words) {
+  document.getElementById("speech").value = words;
+  document.getElementById("mic").value = "";
+  document.getElementById("speech").focus();
+}
+</script>
+ <table>
+ <td>
+<textarea cols="30" rows="3" id="speech"></textarea>
+<td><input style="width: 15px; height:20px;border: 0px;background-color:white" id="mic" x-webkit-speech="" onwebkitspeechchange="transcribe(this.value)">
+</table>
+
+
+					<a href="#" id="talk" class="button">Talk (can't speak)</a>	
+
+			
+			
+			<a href="#" id="toggle-mouse-tracking" class="button">Mouse tracking <span class="state" id="toggle-mouse-tracking-state">ON</span></a>
+			<center><p><a href="./changelist.html" target="_blank">changelist</a></center>
+		</fieldset>
+		<div id="loading">
+			<h3>Please wait while loading the model...</h3>
+			<div id="whatsloaded"></div>		
+		</div>
+		<script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
+		<script type="text/javascript" src="./jquery.min.js"></script>
+		<script type="text/javascript" src="./jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./three.js"></script>
+		<script type="text/javascript" src="./script.js"></script>
+		<script type="text/javascript" src="./jquery-csv.js"></script>
+		<script type="text/javascript" src="./mimic.js"></script>
+</html>
